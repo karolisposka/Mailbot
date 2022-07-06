@@ -43,7 +43,7 @@ const getData = async () => {
   }
 };
 
-const bot = cron.schedule(`* * * * *`, async () => {
+const bot = cron.schedule(`59 * * * *`, async () => {
   try {
     const currentTime = new Date().getHours();
     const data = await getData();

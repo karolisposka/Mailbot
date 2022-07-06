@@ -42,8 +42,7 @@ const getData = async () => {
     console.log(err);
   }
 };
-
-const bot = cron.schedule(`1 * * * *`, async () => {
+cron.schedule(`1 * * * *`, async () => {
   try {
     const time = new Date();
     const currentTime = time.toLocaleTimeString([], {
@@ -72,5 +71,3 @@ const bot = cron.schedule(`1 * * * *`, async () => {
     console.log(err);
   }
 });
-
-bot.start();

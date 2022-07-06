@@ -45,7 +45,10 @@ const getData = async () => {
 
 const bot = cron.schedule(`59 * * * *`, async () => {
   try {
-    const currentTime = new Date().getHours();
+    const currentTime = new Date().getHours().toLocaleString("en-US", {
+      timeZone: "Europe/Riga",
+    });
+    console.log(currentTime);
     const data = await getData();
     data
       .map((item) => {

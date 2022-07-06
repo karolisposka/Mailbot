@@ -43,9 +43,12 @@ const getData = async () => {
   }
 };
 
-const bot = cron.schedule(`15 * * * *`, async () => {
+const bot = cron.schedule(`* * * * *`, async () => {
   try {
-    const currentTime = new Date().getHours().toLocaleString("en-US", {
+    const time = new Date();
+    const currentTime = time.toLocaleTimeString([], {
+      hour: "2-digit",
+      hour12: false,
       timeZone: "Europe/Riga",
     });
     console.log(currentTime);
